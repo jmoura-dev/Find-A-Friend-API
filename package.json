@@ -1,0 +1,31 @@
+{
+  "name": "challenge-03-nodejs",
+  "version": "1.0.0",
+  "description": "- Find a Friend (API);",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoura-dev/Find-A-Friend-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmoura-dev/Find-A-Friend-API/issues"
+  },
+  "homepage": "https://github.com/jmoura-dev/Find-A-Friend-API#readme",
+  "devDependencies": {
+    "@types/node": "20.1.7",
+    "tsup": "6.7.0",
+    "tsx": "3.12.7",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "fastify": "4.17.0"
+  }
+}

@@ -8,21 +8,40 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  name     String
-  email    String @unique
-  address  String
-  whatsapp String
-  role     Role   @default(MEMBER)
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  password   String
+  role       Role     @default(MEMBER)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
 
   @@map("users")
 }
 
+model Orgs {
+  id              String   @id @default(uuid())
+  name            String
+  email           String   @unique
+  password        String
+  address         String
+  whatsapp_number String
+  created_at      DateTime @default(now())
+  role            Role     @default(MEMBER)
+
+  @@map("orgs")
+}
+
 model Pet {
-  id      String @id @default(uuid())
-  race    String
-  details String
-  city    String
+  id         String   @id @default(uuid())
+  name       String
+  age        String
+  breed      String
+  size       String
+  about      String
+  city       String
+  avatar_pet String?
+  created_at DateTime @default(now())
 
   @@map("pets")
 }

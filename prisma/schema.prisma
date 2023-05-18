@@ -8,40 +8,42 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  name       String
-  email      String   @unique
-  password   String
-  role       Role     @default(MEMBER)
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now())
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          Role     @default(MEMBER)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
 
   @@map("users")
 }
 
-model Orgs {
-  id              String   @id @default(uuid())
+model Org {
+  id              String @id @default(uuid())
   name            String
-  email           String   @unique
-  password        String
+  email           String @unique
+  password_hash   String
   address         String
   whatsapp_number String
-  created_at      DateTime @default(now())
-  role            Role     @default(MEMBER)
+  role            Role   @default(MEMBER)
+  pets            Pet[]
 
   @@map("orgs")
 }
 
 model Pet {
-  id         String   @id @default(uuid())
+  id         String  @id @default(uuid())
   name       String
   age        String
   breed      String
   size       String
-  about      String
+  about      String?
   city       String
   avatar_pet String?
-  created_at DateTime @default(now())
+
+  org    Org    @relation(fields: [org_id], references: [id])
+  org_id String
 
   @@map("pets")
 }

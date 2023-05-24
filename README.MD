@@ -19,7 +19,7 @@
 - [ ] The user who wants to adopt will contact with ORG from WhatsApp;
 - [ ] All filters other than city are optional;
 - [ ] For an ORG to access the application as admin, it needs to be logged in;
-- [ ] The user must not be able to register with a duplicate e-mail;
+- [x] The user must not be able to register with a duplicate e-mail;
 
 ## About
 

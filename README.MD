@@ -5,6 +5,7 @@
 ## FRs (Functional rules)
 
 - [x] It should be possible to register;
+- [ ] It must be possible to register a pet
 - [ ] It should be possible to list all pets available for adoption in the city;
 - [ ] It should be possible to filter pets by your characteristics;
 - [ ] It should be possible to view details a pet for adoption;

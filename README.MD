@@ -9,8 +9,8 @@
 - [ ] It should be possible to list all pets available for adoption in the city;
 - [ ] It should be possible to filter pets by your characteristics;
 - [ ] It should be possible to view details a pet for adoption;
-- [ ] It should be possible to register as an ORG;
-- [ ] It should be possible to done login as an ORG;
+- [x] It should be possible to register as an ORG;
+- [x] It should be possible to done login as an ORG;
 
 ## BRs (Business rules)
 

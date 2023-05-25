@@ -17,7 +17,7 @@
 ALTER TABLE "pets" DROP COLUMN "details",
 DROP COLUMN "race",
 ADD COLUMN     "about" TEXT,
-ADD COLUMN     "age" TEXT NOT NULL,
+ADD COLUMN     "age" INT NOT NULL,
 ADD COLUMN     "avatar_pet" TEXT,
 ADD COLUMN     "breed" TEXT NOT NULL,
 ADD COLUMN     "name" TEXT NOT NULL,

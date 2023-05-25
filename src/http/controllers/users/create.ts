@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { UserAlreadyExistsError } from '@/services/errors/user-already-exists-error'
 import { makeRegisterService } from '@/services/factories/make-register-service'
+import { EmailAlreadyRegistered } from '@/services/errors/email-already-registered'
 
 export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createSchemaRegisterUser = z.object({
@@ -21,7 +21,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
       password,
     })
   } catch (err) {
-    if (err instanceof UserAlreadyExistsError) {
+    if (err instanceof EmailAlreadyRegistered) {
       return reply.status(409).send({ message: err.message })
     }
     throw err

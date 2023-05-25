@@ -4,7 +4,6 @@ import { EmailAlreadyRegistered } from '../errors/email-already-registered'
 import { Org } from '@prisma/client'
 
 interface RegisterOrgRequest {
-  id: string
   name: string
   email: string
   password: string
@@ -20,7 +19,6 @@ export class RegisterOrgService {
   constructor(private orgsRepository: OrgsRepository) {}
 
   async execute({
-    id,
     name,
     email,
     password,
@@ -36,7 +34,6 @@ export class RegisterOrgService {
     }
 
     const org = await this.orgsRepository.create({
-      id,
       name,
       email,
       password_hash,

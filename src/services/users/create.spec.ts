@@ -1,15 +1,15 @@
-import { InMemoryRepository } from '@/repositories/in-memory/in-memory-repository'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { CreateService } from './create'
 import { compare } from 'bcryptjs'
-import { UserAlreadyExistsError } from '../errors/user-already-exists-error'
+import { EmailAlreadyRegistered } from '../errors/email-already-registered'
+import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 
-let usersRepository: InMemoryRepository
+let usersRepository: InMemoryUsersRepository
 let sut: CreateService
 
 describe('Create Service', () => {
   beforeEach(() => {
-    usersRepository = new InMemoryRepository()
+    usersRepository = new InMemoryUsersRepository()
     sut = new CreateService(usersRepository)
   })
 
@@ -48,6 +48,6 @@ describe('Create Service', () => {
         email: 'fulano@email.com',
         password: '123456',
       })
-    }).rejects.toBeInstanceOf(UserAlreadyExistsError)
+    }).rejects.toBeInstanceOf(EmailAlreadyRegistered)
   })
 })

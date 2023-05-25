@@ -1,15 +1,15 @@
-import { InMemoryRepository } from '@/repositories/in-memory/in-memory-repository'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { AuthenticateService } from './authenticate'
 import { hash } from 'bcryptjs'
 import { InvalidCredentialsError } from '../errors/invalid-credentials-error'
+import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 
-let usersRepository: InMemoryRepository
+let usersRepository: InMemoryUsersRepository
 let sut: AuthenticateService
 
 describe('Authenticate service', () => {
   beforeEach(() => {
-    usersRepository = new InMemoryRepository()
+    usersRepository = new InMemoryUsersRepository()
     sut = new AuthenticateService(usersRepository)
   })
 

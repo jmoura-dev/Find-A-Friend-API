@@ -5,7 +5,7 @@
 ## FRs (Functional rules)
 
 - [x] It should be possible to register;
-- [ ] It must be possible to register a pet
+- [x] It must be possible to register a pet
 - [ ] It should be possible to list all pets available for adoption in the city;
 - [ ] It should be possible to filter pets by your characteristics;
 - [ ] It should be possible to view details a pet for adoption;
@@ -16,7 +16,7 @@
 
 - [ ] To list pets, we must inform the city;
 - [ ] An ORG needs to have an address and WhatsApp number;
-- [ ] A pet must be linked to an ORG;
+- [x] A pet must be linked to an ORG;
 - [ ] The user who wants to adopt will contact with ORG from WhatsApp;
 - [ ] All filters other than city are optional;
 - [ ] For an ORG to access the application as admin, it needs to be logged in;

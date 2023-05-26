@@ -1,24 +1,36 @@
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { RegisterPetService } from './register'
+import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
+import { hash } from 'bcryptjs'
 
 let petsRepository: InMemoryPetsRepository
+let orgsRepository: InMemoryOrgsRepository
 let sut: RegisterPetService
 
 describe('Register pet service', () => {
   beforeEach(() => {
     petsRepository = new InMemoryPetsRepository()
-    sut = new RegisterPetService(petsRepository)
+    orgsRepository = new InMemoryOrgsRepository()
+    sut = new RegisterPetService(petsRepository, orgsRepository)
   })
 
   it('Should be able to register', async () => {
+    const org = await orgsRepository.create({
+      name: 'Random Org',
+      email: 'random_org@email.com',
+      address: 'R. São Malaquias, 13a - Jacintinho, Maceió - AL, 57040-420',
+      whatsapp_number: '82 93737-3233',
+      password_hash: await hash('123456', 6),
+    })
+
     const { pet } = await sut.execute({
       name: 'Ralf',
       age: '3',
       breed: 'mutt',
       city: 'maceió',
-      org_id: 'Pet happy',
       size: 'medium',
+      orgId: org.id,
     })
 
     expect(pet.id).toEqual(expect.any(String))

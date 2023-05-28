@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { RegisterPetService } from './register'
 import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
 import { hash } from 'bcryptjs'
+import { OrgDoesNotExists } from '../errors/org-does-not-exists'
 
 let petsRepository: InMemoryPetsRepository
 let orgsRepository: InMemoryOrgsRepository
@@ -34,5 +35,18 @@ describe('Register pet service', () => {
     })
 
     expect(pet.id).toEqual(expect.any(String))
+  })
+
+  it('Should not be able to register a pet without informing org correctly', async () => {
+    expect(async () => {
+      await sut.execute({
+        name: 'Ralf',
+        age: '3',
+        breed: 'mutt',
+        city: 'maceió',
+        size: 'medium',
+        orgId: 'Org-does-not-exists',
+      })
+    }).rejects.toBeInstanceOf(OrgDoesNotExists)
   })
 })

@@ -8,7 +8,7 @@
 - [x] It must be possible to register a pet
 - [x] It should be possible to list all pets available for adoption in the city;
 - [x] It should be possible to filter pets by your characteristics;
-- [ ] It should be possible to view details a pet for adoption;
+- [x] It should be possible to view details a pet for adoption;
 - [x] It should be possible to register as an ORG;
 - [x] It should be possible to done login as an ORG;
 

@@ -22,4 +22,28 @@ export class InMemoryPetsRepository implements PetsRepository {
 
     return pet
   }
+
+  async findManyByCharacteristics(
+    city: string,
+    age?: string,
+    breed?: string,
+    size?: string,
+  ) {
+    const petsOnCity = this.items.filter((item) => item.city === city)
+
+    const pets = petsOnCity.filter((item) => {
+      if (age && item.age !== age) {
+        return false
+      }
+      if (breed && item.breed !== breed) {
+        return false
+      }
+      if (size && item.size !== size) {
+        return false
+      }
+      return true
+    })
+
+    return pets
+  }
 }

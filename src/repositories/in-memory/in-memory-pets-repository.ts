@@ -33,7 +33,7 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pet
   }
 
-  async findManyByCharacteristics(
+  async SearchManyByCharacteristics(
     city: string,
     age?: string,
     breed?: string,

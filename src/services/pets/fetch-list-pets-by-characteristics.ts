@@ -21,7 +21,7 @@ export class FetchListPetOnCity {
     breed,
     size,
   }: FetchListPetOnCityRequest): Promise<FetchListPetOnCityResponse> {
-    const pets = await this.petsRepository.findManyByCharacteristics(
+    const pets = await this.petsRepository.SearchManyByCharacteristics(
       city,
       age,
       breed,

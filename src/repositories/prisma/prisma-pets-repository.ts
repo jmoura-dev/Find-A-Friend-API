@@ -2,7 +2,7 @@ import { Prisma } from '@prisma/client'
 import { PetsRepository } from '../pets.repository'
 import { prisma } from '@/lib/prisma'
 
-export class PrismPetsRepository implements PetsRepository {
+export class PrismaPetsRepository implements PetsRepository {
   async create(data: Prisma.PetUncheckedCreateInput) {
     const pet = await prisma.pet.create({
       data,
@@ -34,9 +34,15 @@ export class PrismPetsRepository implements PetsRepository {
     const pets = await prisma.pet.findMany({
       where: {
         city,
-        age,
-        breed,
-        size,
+        age: {
+          contains: age,
+        },
+        breed: {
+          contains: breed,
+        },
+        size: {
+          contains: size,
+        },
       },
     })
 

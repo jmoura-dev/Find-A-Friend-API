@@ -23,8 +23,6 @@ describe('Get pet details Service', () => {
 
     const { pet } = await sut.execute({ id: petRegister.id })
 
-    console.log(pet)
-
     expect(pet.id).toEqual(expect.any(String))
   })
 })

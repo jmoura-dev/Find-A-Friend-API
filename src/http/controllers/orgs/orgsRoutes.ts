@@ -5,5 +5,5 @@ import { authenticate } from './authenticate'
 export async function orgsRoutes(app: FastifyInstance) {
   app.post('/orgs', create)
 
-  app.post('/sessions', authenticate)
+  app.post('/orgs/sessions', authenticate)
 }

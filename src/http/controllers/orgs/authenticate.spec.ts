@@ -20,7 +20,7 @@ describe('Authenticate (e2e)', () => {
       whatsapp_number: '82 938383893',
     })
 
-    const response = await request(app.server).post('/sessions').send({
+    const response = await request(app.server).post('/orgs/sessions').send({
       email: 'happypet@email.com',
       password: '123456',
     })

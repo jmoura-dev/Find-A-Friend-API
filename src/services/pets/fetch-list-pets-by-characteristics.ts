@@ -21,6 +21,9 @@ export class FetchListPetOnCity {
     breed,
     size,
   }: FetchListPetOnCityRequest): Promise<FetchListPetOnCityResponse> {
+    if (city === '') {
+      throw new Error('It is necessary to inform the city')
+    }
     const pets = await this.petsRepository.SearchManyByCharacteristics(
       city,
       age,

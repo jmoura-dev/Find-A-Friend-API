@@ -27,13 +27,15 @@ export class PrismaPetsRepository implements PetsRepository {
 
   async SearchManyByCharacteristics(
     city: string,
-    age?: string | undefined,
-    breed?: string | undefined,
-    size?: string | undefined,
+    age?: string,
+    breed?: string,
+    size?: string,
   ) {
     const pets = await prisma.pet.findMany({
       where: {
-        city,
+        city: {
+          contains: city,
+        },
         age: {
           contains: age,
         },

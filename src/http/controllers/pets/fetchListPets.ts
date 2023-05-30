@@ -20,8 +20,6 @@ export async function fetchListPets(
   try {
     const service = makeFetchListPetOnCity()
 
-    console.log(city, age, breed, size)
-
     const pets = await service.execute({
       city,
       age,
@@ -29,9 +27,7 @@ export async function fetchListPets(
       size,
     })
 
-    return reply.status(200).send({
-      pets,
-    })
+    return reply.status(200).send(pets)
   } catch (err) {
     if (err instanceof Error) {
       return reply.status(400).send({ message: err.message })

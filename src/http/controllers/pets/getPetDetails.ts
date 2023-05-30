@@ -7,7 +7,7 @@ export async function getPetDetails(
   reply: FastifyReply,
 ) {
   const createParamsSchema = z.object({
-    id: z.string().uuid(),
+    id: z.string(),
   })
 
   const { id } = createParamsSchema.parse(request.params)
@@ -19,7 +19,7 @@ export async function getPetDetails(
       id,
     })
 
-    return reply.status(200).send({ pet })
+    return reply.status(200).send(pet)
   } catch (err) {
     if (err instanceof Error) {
       return reply.status(400).send({ message: err.message })

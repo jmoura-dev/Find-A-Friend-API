@@ -19,7 +19,7 @@
 - [x] A pet must be linked to an ORG;
 - [x] The user who wants to adopt will contact with ORG from WhatsApp;
 - [x] All filters other than city are optional;
-- [ ] For an ORG to access the application as admin, it needs to be logged in;
+- [x] For an ORG to access the application as admin, it needs to be logged in;
 - [x] The user must not be able to register with a duplicate e-mail;
 
 ## About

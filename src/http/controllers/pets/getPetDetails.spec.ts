@@ -43,9 +43,7 @@ describe('Get Pet Details (e2e)', () => {
       .set('Authorization', `Bearer ${token}`)
       .send()
 
-    const { body } = response
-
     expect(response.statusCode).toEqual(200)
-    expect(body.pet.name).toEqual('Lessie')
+    expect(response.body.pet.name).toEqual('Lessie')
   })
 })

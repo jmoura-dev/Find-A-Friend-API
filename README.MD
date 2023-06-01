@@ -1,6 +1,4 @@
-# App
-
-- Find a Friend (API);
+# API Find-a-Friend
 
 ## FRs (Functional rules)
 
@@ -22,7 +20,7 @@
 - [x] For an ORG to access the application as admin, it needs to be logged in;
 - [x] The user must not be able to register with a duplicate e-mail;
 
-## About
+## 💡 About
 
 ### Techs:
 - **Nodejs**, **Fastify**, **Docker**, **Typescript**, **Zod**, **Dependency inversion**, **Design Patterns**, **JWT Authenticate**, **CI**;
@@ -32,3 +30,22 @@
 
 ### Tests:
 - **Vitest**, **In-memory-databases**, **Unit tests**, **Tests e2e**, **TDD**;
+
+## 📁 Project
+
+- Construct a API REST with SOLID;
+- Using Design Pattern, Docker to init database, JWT Authenticate, Refresh token, unit tests, tests e2e and other things;
+
+## 📚 Context
+- API for adoption pets;
+- It is possible to register as org or user;
+- When logged in as org, it is possible to register a new pet;
+- The search for a pet can be filtered by characteristics of the animal;
+- Only the filter by city is mandatory;
+
+## 👨🏽‍💻 To use
+### Steps:
+- git clone https://github.com/jmoura-dev/Find-A-Friend-API.git
+- cd Find-A-Friend-API
+- npm install
+- npm run dev

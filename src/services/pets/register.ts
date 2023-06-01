@@ -7,9 +7,11 @@ interface RegisterPetRequest {
   name: string
   age: string
   breed: string
+  about?: string
   size: string
   city: string
   orgId: string
+  avatar_pet?: string
 }
 
 interface RegisterPetResponse {
@@ -29,6 +31,8 @@ export class RegisterPetService {
     size,
     city,
     orgId,
+    avatar_pet,
+    about,
   }: RegisterPetRequest): Promise<RegisterPetResponse> {
     const org = await this.orgsRepository.findById(orgId)
 
@@ -43,6 +47,8 @@ export class RegisterPetService {
       size,
       city,
       org_id: org.id,
+      avatar_pet,
+      about,
     })
 
     return {

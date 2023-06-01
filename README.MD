@@ -45,7 +45,7 @@
 
 ## 👨🏽‍💻 To use
 ### Steps:
-- git clone https://github.com/jmoura-dev/Find-A-Friend-API.git
-- cd Find-A-Friend-API
-- npm install
-- npm run dev
+##### git clone https://github.com/jmoura-dev/Find-A-Friend-API.git
+##### cd Find-A-Friend-API
+##### npm install
+##### npm run dev
